@@ -1,12 +1,11 @@
 {
   "name": "@amoutonbrady/solid-debug",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Simple debugger for Solid",
   "main": "dist/solid-debug.cjs.js",
   "module": "dist/solid-debug.esm.js",
   "jsnext:main": "dist/solid-debug.esm.js",
   "types": "types/solid-debug.d.ts",
-  "private": false,
   "sideEffect": false,
   "publishConfig": {
     "access": "public"
@@ -17,7 +16,7 @@
   ],
   "scripts": {
     "build": "rimraf dist types && rollup -c && tsc",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -31,22 +30,23 @@
   },
   "homepage": "https://github.com/amoutonbrady/solid-debug#readme",
   "peerDependencies": {
-    "solid-js": "^0.19.1"
+    "solid-js": "^0.20.0"
   },
   "dependencies": {
-    "solid-js": "^0.19.2"
+    "solid-js": "^0.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
     "@babel/runtime": "^7.11.2",
-    "@rollup/plugin-babel": "^5.2.0",
+    "@babel/types": "^7.11.5",
+    "@rollup/plugin-babel": "^5.2.1",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@types/node": "^14.6.4",
-    "babel-preset-solid": "^0.19.0",
+    "@types/node": "^14.11.2",
+    "babel-preset-solid": "^0.20.0",
     "rimraf": "^3.0.2",
-    "rollup": "^2.26.10",
-    "typescript": "^4.0.2"
+    "rollup": "^2.28.2",
+    "typescript": "^4.0.3"
   }
 }
