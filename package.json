@@ -1,6 +1,6 @@
 {
   "name": "@amoutonbrady/solid-debug",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple debugger for Solid",
   "repository": {
     "type": "git",
@@ -14,18 +14,18 @@
   "author": "Alexandre Mouton-Brady <amoutonbrady@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/amoutonbrady/solid-debug#readme",
-  "solid": "dist/source/solid-i18n.jsx",
-  "source": "dist/source/solid-i18n.jsx",
-  "main": "dist/cjs/solid-i18n.js",
-  "module": "dist/esm/solid-i18n.js",
-  "types": "dist/types/solid-i18n.d.ts",
+  "solid": "dist/source/solid-debug.jsx",
+  "source": "dist/source/solid-debug.jsx",
+  "main": "dist/cjs/solid-debug.js",
+  "module": "dist/esm/solid-debug.js",
+  "types": "dist/types/solid-debug.d.ts",
   "exports": {
     ".": {
-      "solid": "./dist/source/solid-i18n.jsx",
-      "import": "./dist/esm/solid-i18n.js",
-      "browser": "./dist/esm/solid-i18n.js",
-      "require": "./dist/cjs/solid-i18n.js",
-      "node": "./dist/cjs/solid-i18n.js"
+      "solid": "./dist/source/solid-debug.jsx",
+      "import": "./dist/esm/solid-debug.js",
+      "browser": "./dist/esm/solid-debug.js",
+      "require": "./dist/cjs/solid-debug.js",
+      "node": "./dist/cjs/solid-debug.js"
     }
   },
   "sideEffect": false,
