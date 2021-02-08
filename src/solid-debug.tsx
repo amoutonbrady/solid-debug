@@ -6,6 +6,7 @@ import {
   produce,
   For,
   createEffect,
+  JSX
 } from 'solid-js';
 
 const css = {
