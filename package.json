@@ -2,51 +2,58 @@
   "name": "@amoutonbrady/solid-debug",
   "version": "0.1.0",
   "description": "Simple debugger for Solid",
-  "main": "dist/solid-debug.cjs.js",
-  "module": "dist/solid-debug.esm.js",
-  "jsnext:main": "dist/solid-debug.esm.js",
-  "types": "types/solid-debug.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amoutonbrady/solid-debug.git"
+  },
+  "keywords": [
+    "solid",
+    "solidjs",
+    "debug"
+  ],
+  "author": "Alexandre Mouton-Brady <amoutonbrady@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/amoutonbrady/solid-debug#readme",
+  "solid": "dist/source/solid-i18n.jsx",
+  "source": "dist/source/solid-i18n.jsx",
+  "main": "dist/cjs/solid-i18n.js",
+  "module": "dist/esm/solid-i18n.js",
+  "types": "dist/types/solid-i18n.d.ts",
+  "exports": {
+    ".": {
+      "solid": "./dist/source/solid-i18n.jsx",
+      "import": "./dist/esm/solid-i18n.js",
+      "browser": "./dist/esm/solid-i18n.js",
+      "require": "./dist/cjs/solid-i18n.js",
+      "node": "./dist/cjs/solid-i18n.js"
+    }
+  },
   "sideEffect": false,
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "dist",
-    "types"
+    "dist"
   ],
   "scripts": {
-    "build": "rimraf dist types && rollup -c && tsc",
-    "prepublishOnly": "yarn build"
+    "build": "del dist && rollup -c && tsc",
+    "prepublishOnly": "pnpm build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amoutonbrady/solid-debug.git"
-  },
-  "keywords": [],
-  "author": "Alexandre Mouton-Brady <amoutonbrady@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amoutonbrady/solid-debug/issues"
-  },
-  "homepage": "https://github.com/amoutonbrady/solid-debug#readme",
   "peerDependencies": {
-    "solid-js": "^0.20.0"
+    "solid-js": "^0.24"
   },
   "dependencies": {
-    "solid-js": "^0.20.0"
+    "solid-js": "^0.24.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-typescript": "^7.10.4",
-    "@babel/runtime": "^7.11.2",
-    "@babel/types": "^7.11.5",
-    "@rollup/plugin-babel": "^5.2.1",
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "@types/node": "^14.11.2",
-    "babel-preset-solid": "^0.20.0",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.28.2",
-    "typescript": "^4.0.3"
+    "@babel/core": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.13",
+    "@rollup/plugin-babel": "^5.2.3",
+    "@rollup/plugin-node-resolve": "^11.1.1",
+    "@types/node": "^14.14.25",
+    "babel-preset-solid": "^0.24.2",
+    "del-cli": "^3.0.1",
+    "rollup": "^2.38.5",
+    "typescript": "^4.1.3"
   }
 }

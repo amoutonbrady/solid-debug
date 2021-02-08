@@ -1,7 +1,6 @@
 // @ts-check
 import { babel } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
-import pkg from './package.json';
 
 const extensions = ['.tsx', '.ts'];
 
@@ -10,30 +9,28 @@ const extensions = ['.tsx', '.ts'];
  */
 const config = {
   input: 'src/solid-debug.tsx',
-  treeshake: true,
-  external: [...Object.keys(pkg.dependencies), 'solid-js/dom'],
+  external: ['solid-js', 'solid-js/web'],
   output: [
     {
-      name: pkg.name,
-      file: pkg.main,
+      dir: 'dist/cjs',
       format: 'cjs',
+      sourcemap: true,
     },
     {
-      name: pkg.name,
-      file: pkg.module,
+      dir: 'dist/esm',
       format: 'esm',
+      sourcemap: true,
     },
   ],
   plugins: [
     resolve({
       extensions,
+      browser: true,
     }),
     babel({
       extensions,
-      babelHelpers: 'runtime',
-      exclude: 'node_modules/**',
+      babelHelpers: 'bundled',
       presets: ['babel-preset-solid', '@babel/preset-typescript'],
-      plugins: ['@babel/plugin-transform-runtime'],
     }),
   ],
 };
